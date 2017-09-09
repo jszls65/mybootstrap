@@ -12,8 +12,22 @@ public class JsonUtil {
 	 * @return
 	 */
 	public static String jsonToString(Object obj){
-		JSONObject resultJSON = JSONObject.fromObject(obj);   
+		if(obj == null)
+			return null;
+		JSONObject resultJSON = null ;
+		try {
+			resultJSON = JSONObject.fromObject(obj);
+		} catch (Exception e) {
+			
+			return (String) obj;
+		}   
 		return resultJSON.toString();
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		System.out.println(jsonToString("{123}"));
 	}
 
 	

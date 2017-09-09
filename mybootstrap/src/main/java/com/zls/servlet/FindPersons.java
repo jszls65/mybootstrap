@@ -47,6 +47,7 @@ public class FindPersons extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String opcode = request.getParameter("opcode");
+		System.out.println("opcode:"+opcode);
 	    LOG.info(this.getClass().getName()+" doPost opcode"+JsonUtil.jsonToString(opcode));
 	    
 	    if("login".equals(opcode)){
@@ -61,10 +62,7 @@ public class FindPersons extends HttpServlet {
 			LoginService login = new LoginService(user);
 			msg = login.login();
 			
-			
 	    }
-	    
-	    
 	    
 	    
 	    LOG.info(this.getClass().getName()+" doPost msg"+JsonUtil.jsonToString(msg));

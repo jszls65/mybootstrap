@@ -9,6 +9,11 @@ myApp.controller('LoginController', function($scope, $route, $location) {
 
     $scope.$login.loginBtn = function() {
         debugger;
+        if ($scope.$login.person.name && $scope.$login.person.password) {
+
+        } else {
+            return;
+        }
         $.ajax({
             type: 'POST',
             url: 'findPersons',
@@ -23,11 +28,10 @@ myApp.controller('LoginController', function($scope, $route, $location) {
                 debugger;
                 if (result) {
                     if (result.msgCode == 200) {
-                        $scope.$login.msg = result.msgDesc;
+                        $scope.$login.msg = "result.msgDesc";
                         $location.path("/main");
-                    } else if (result.msgCode == 500) {
+                    } else {
                         $scope.$login.msg = result.msgDesc;
-                        delete $scope.$login.person.password;
                     }
                 }
 

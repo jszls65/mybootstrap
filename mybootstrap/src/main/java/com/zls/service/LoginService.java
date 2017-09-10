@@ -38,7 +38,8 @@ public class LoginService {
 			
 			if(iter.hasNext()){
 				msg.setMsgCode("200");
-				msg.setMsgDesc("登录成功");
+			}else{
+				msg.setMsgCode("111");
 			}
 		} catch (Exception e) {
 			LOG.error(e);

@@ -17,7 +17,8 @@ myApp.config(['$stateProvider', '$urlRouterProvider',
             url: "/systemSetting",
             views: {
                 'mainDiv': {
-                    templateUrl: "/mybootstrap/main/systemSetting/systemSetting.html",
+                    //templateUrl: "/mybootstrap/main/systemSetting/systemSetting.html",
+                	template: '<H1>系统设置</H1>',
                     controller: "SystemSettingController"
                 }
             }

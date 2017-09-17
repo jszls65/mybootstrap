@@ -2,6 +2,7 @@ use mybootstrap;
 db.userinfo.insert({userId:'zls',userName:'张连胜',password:'123',addr:'南京',age:'27'});
 
 db.userinfo.find();
+db.userinfo.update({userId:'zls'},password:'c7bdf8dddfea3010b7634caaa0e82a17');
 
 
 db.sysparams.insert({code:'login-200',desc:'登录成功。'});

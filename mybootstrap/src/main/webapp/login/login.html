@@ -7,11 +7,11 @@
         <input type="password" name="password" ng-model="$login.person.password" id="inputPassword" class="form-control" placeholder="Password" required>
         <div class="alert alert-danger alert-dismissable" ng-if='$login.msg'>
             <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
-            {{$login.msg}}，用户名或密码错误。
+            {{$login.msg}}用户名或密码错误。
         </div>
-        <div class="checkbox">
+        <div>
             <label>
-                <input type="checkbox" value="remember-me"> Remember me
+                <a ng-click="$login.register();">Register</a>
             </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="$login.loginBtn();">Sign in</button>

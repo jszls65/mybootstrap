@@ -8,6 +8,7 @@ import com.mongodb.client.MongoCursor;
 import com.zls.db.DBUtil;
 import com.zls.pojo.MessageInfo;
 import com.zls.pojo.UserInfo;
+import com.zls.util.MD5Util;
 
 public class LoginService {
 	
@@ -32,7 +33,7 @@ public class LoginService {
 				return msg;
 			}
 			Document doc = new Document();
-			doc.append("userid", user.getUserId()).append("password", user.getPassword());
+			doc.append("userid", user.getUserId()).append("password", MD5Util.md5Encode(user.getPassword()));
 			FindIterable<Document> userList = DBUtil.find("userinfo", doc );
 			MongoCursor<Document> iter = userList.iterator();
 			

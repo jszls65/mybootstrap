@@ -3,7 +3,7 @@ var myApp = angular.module('myApp', ['ui.router', 'ngRoute']);
 
 myApp.config(['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
-		debugger;
+        debugger;
         $urlRouterProvider.when("/").otherwise("/login");
         $stateProvider.state("login", {
             url: "/login",
@@ -13,12 +13,16 @@ myApp.config(['$stateProvider', '$urlRouterProvider',
             url: "/main",
             templateUrl: '/mybootstrap/main/main.html',
             controller: 'MainController'
+        }).state("register", {
+            url: "/register",
+            templateUrl: '/mybootstrap/login/register.html',
+            controller: 'RegisterController'
         }).state("main.systemSetting", {
             url: "/systemSetting",
             views: {
                 'mainDiv': {
                     //templateUrl: "/mybootstrap/main/systemSetting/systemSetting.html",
-                	template: '<H1>系统设置</H1>',
+                    template: '<H1>系统设置</H1>',
                     controller: "SystemSettingController"
                 }
             }

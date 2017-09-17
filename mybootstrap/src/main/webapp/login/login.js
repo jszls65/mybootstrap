@@ -9,9 +9,7 @@ myApp.controller('LoginController', function($scope, $route, $location) {
 
     $scope.$login.loginBtn = function() {
         debugger;
-        if ($scope.$login.person.name && $scope.$login.person.password) {
-
-        } else {
+        if (!($scope.$login.person.name && $scope.$login.person.password)) {
             return;
         }
         $.ajax({
@@ -42,7 +40,12 @@ myApp.controller('LoginController', function($scope, $route, $location) {
             }
         });
 
+    };
+    $scope.$login.register = function() {
+        debugger;
+        $location.path("/register");
     }
+
 
 
 
